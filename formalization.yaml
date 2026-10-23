@@ -1,0 +1,73 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+project:
+  name: "There is no universal Fσ equivalence relation"
+  description: >-
+    Formalization of the nonuniversality conclusion of Ruijun Wang's paper:
+    every Fσ equivalence relation on a Polish space fails to receive a Borel
+    reduction from some Fσ equivalence relation on a Polish space. The spaces
+    carry the Borel sigma algebras of their specified topologies.
+  authors: ["seba100chat"]
+  responsible_maintainers: ["seba100chat"]
+  license: "MIT"
+classification:
+  arxiv: ["math.LO"]
+  msc2020: ["03E15"]
+sources:
+  - title: "There is no universal Fσ equivalence relation"
+    authors: ["Ruijun Wang"]
+    id: "https://arxiv.org/abs/2610.31052v1"
+    type: "paper"
+    location: "Nonuniversality conclusion of the main theorem"
+    relationship: "formalizes"
+    license: "CC-BY-4.0"
+related_formalizations: []
+status:
+  scope: >-
+    The single compared theorem states that for every Fσ equivalence relation E
+    on a Polish space there exists an Fσ equivalence relation F on a Polish
+    space such that F is not Borel reducible to E. Both measurable structures
+    are the Borel sigma algebras. The proof development follows the paper's
+    Hilbert-space construction; no broader project results are advertised here.
+  # These counts exclude the deliberate proof hole in Challenge.lean.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Quot.sound", "Classical.choice"]
+automation:
+  methods:
+    - method: "agent"
+      framework: "Codex"
+      tool_setup: >-
+        Codex agents generated and revised Lean definitions and proofs under
+        human direction, inspected statements, and ran Lean and Comparator checks.
+      prompting_notes: >-
+        The human requested formalization of Wang's result and selected the
+        explicit nonuniversality statement as the single public theorem.
+  notes: "Exact model variants and costs were not recorded."
+fidelity:
+  divergences: >-
+    The advertised theorem is the paper's nonuniversality conclusion under
+    Borel reducibility. The stronger Hilbert-subspace and Baire-reducibility
+    formulation is not a separately compared theorem. No divergence in the
+    advertised mathematical conclusion is known.
+review:
+  status: "agent-reviewed"
+  notes: >-
+    Codex agents audited the statement and its definitions. On 2026-10-23, the
+    source/build/axiom checks and sandboxed Comparator check passed with Lean,
+    NanoDa, and con-ron on the pinned toolchain. No independent human peer review
+    or endorsement by the paper's author is claimed. This is not a Palomar
+    submission or registration.
+alignment:
+  namespace: "NoUniversalFSigma"
+  statements:
+    - source: "Nonuniversality conclusion of the main theorem"
+      lean: "NoUniversalFSigma.not_isUniversalFSigma"
+      module: "Solution"
+      status: "proved"
+      note: >-
+        Every Fσ equivalence relation is the target of a nonreducibility
+        statement witnessed by an Fσ equivalence relation on a Polish space.
+acknowledgements: >-
+  Ruijun Wang for the mathematical result and proof; the Lean and Mathlib
+  communities for the proof assistant and libraries; Codex for agent assistance.
