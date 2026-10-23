@@ -8,8 +8,8 @@ project:
     For equivalence relations E and F on Polish spaces X and Y, we say that E is Borel reducible to F, written E ≤_B F, if there exists a Borel function f : X → Y such that for all x, y ∈ X, we have x E y if and only if f(x) F f(y).
     An Fσ equivalence relation E is universal if for every Fσ equivalence relation F, we have F ≤_B E.
     The theorem states that there's no such relation.
-  authors: [Konrad Deka]
-  responsible_maintainers: [Konrad Deka]
+  authors: [{name: Konrad Deka, github: konrad-012}]
+  responsible_maintainers: [{name: Konrad Deka, github: konrad-012}]
   license: MIT
 classification:
   arxiv: [math.LO]
